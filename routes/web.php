@@ -17,9 +17,20 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('products', ProductController::class)->only([
+
+Route::prefix('products')->name('products.')->group(function () {
+    Route::get('products', [ProductController::class, 'index'])->name("products.index");
+    Route::get('products/create', [ProductController::class, 'create'])->name("products.create");
+    Route::post('products', [ProductController::class, 'store'])->name("products.store");
+    Route::get('products/{product}/edit', [ProductController::class, 'edit'])->name("products.edit");
+    Route::patch('products/{product}', [ProductController::class, 'update'])->name("products.update");
+    Route::delete('products/{product}', [ProductController::class, 'destroy'])->name("products.destroy")
+});
+
+/*Route::resource('products', ProductController::class)->only([
     'index', 'show', 'store', 'update', 'destroy'
-]);
+]);/*
+
 /*
 products.index:     GET|HEAD        products                            ProductController@index 列出所有產品
 
