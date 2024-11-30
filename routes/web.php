@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('products', ProductController::class);
+Route::resource('products', ProductController::class)->only([
+    'index', 'show', 'store', 'update', 'destroy'
+]);
 /*
 products.index:     GET|HEAD        products                            ProductController@index 列出所有產品
 

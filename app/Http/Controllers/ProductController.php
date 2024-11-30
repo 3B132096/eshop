@@ -69,6 +69,6 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
-        return 'detory';
+        return 'destory';
     }
 }
