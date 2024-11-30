@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
@@ -14,6 +15,7 @@ class ProductController extends Controller
     public function index()
     {
         //
+        return 'index';
     }
 
     /**
@@ -22,6 +24,7 @@ class ProductController extends Controller
     public function create()
     {
         //
+        return 'create';
     }
 
     /**
@@ -30,6 +33,7 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         //
+        return 'store';
     }
 
     /**
@@ -38,6 +42,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
+        return 'show';
     }
 
     /**
@@ -46,6 +51,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         //
+        return 'edit';
     }
 
     /**
@@ -54,6 +60,7 @@ class ProductController extends Controller
     public function update(UpdateProductRequest $request, Product $product)
     {
         //
+        return 'update';
     }
 
     /**
@@ -62,5 +69,6 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+        return 'detory';
     }
 }
