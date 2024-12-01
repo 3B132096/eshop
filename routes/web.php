@@ -49,6 +49,7 @@ products.update:    PUT|PATCH       products/{product}                  ProductC
 products.destroy:   DELETE          products/{product}                  ProductController@destroy 刪除某一項產品
 */
 Route::resource('cart_items', CartItemController::class);
+Route::resource('orders', OrderController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
